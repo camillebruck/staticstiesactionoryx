@@ -1,7 +1,11 @@
-FROM camillebrucky/basic-deloy:latest
+FROM node:12.18.1
 
+COPY package.json package.json
+COPY package-lock.json package-lock.json
+
+FROM camillebrucky/basic-deloy:latest
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
-RUN apt install nodejs
+
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["sh", "/entrypoint.sh"]
