@@ -1,5 +1,5 @@
 FROM node:12.18.1
-
+WORKDIR /node
 COPY package*.json ./
 
 FROM camillebrucky/basic-deloy:latest
