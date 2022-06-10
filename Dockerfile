@@ -1,7 +1,6 @@
 FROM node:12.18.1
 
-COPY package.json package.json
-COPY package-lock.json package-lock.json
+COPY package*.json ./
 
 FROM camillebrucky/basic-deloy:latest
 # Copies your code file from your action repository to the filesystem path `/` of the container
